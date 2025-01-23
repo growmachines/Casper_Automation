@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-mode="unknown">
+    <h1 id="header-title" style="text-align: center;">Settings</h1>
+    <div class="container">
+        <!-- Wi-Fi Credentials Section -->
+        <p id="station-mode-label"><strong>Network Credentials</strong></p>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="ssid">Wi-Fi SSID <span id="connection-status">(Not connected)</span></label>
+                <select id="ssidDropdown">
+                    <option value="Casper_Automation">Casper_Automation</option>
+                </select>
+            </div>
+			<div class="form-group" style="position: relative;">
+    <label for="WiFi_password">Wi-Fi Password</label>
+    <input type="password" id="WiFi_password" value="Casper123" placeholder="Enter password" style="padding-right: 30px;">
+    <i id="toggle-wifi-password" class="fa fa-eye" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+</div>			
+        <div class="form-group">
+            <label for="alternative-ip">Alternative IP Address</label>
+            <input type="text" id="alternative-ip" placeholder="192.168.0.60">
+        </div>
+        <div class="btn-row">
+            <button class="btn-save-Credentials" id="saveCredentialsButton">Save Credentials and Connect to Wi-Fi Network</button>
+            <button class="btn-save-Credentials" id="factory-reset">Factory Reset</button>
+        </div>
+        <hr id="section-divider">
+        <p id="station-mode-label"><strong>Switch Settings</strong></p>
+        <div class="container">
+            <!-- Step 1: Switch Selection -->
+            <div class="form-group">
+                <label for="switch-select">Step 1: Choose the Switch</label>
+                <select id="switch-select">
+                    <!-- Options for switches -->
+                    <option value="1">Switch 1</option>
+                    <option value="2">Switch 2</option>
+                    <option value="3">Switch 3</option>
+                    <option value="4">Switch 4</option>
+                    <option value="5">Switch 5</option>
+                    <option value="6">Switch 6</option>
+                    <option value="7">Switch 7</option>
+                    <option value="8">Switch 8</option>
+                    <option value="9">Switch 9</option>
+                    <option value="10">Switch 10</option>
+                    <option value="11">Switch 11</option>
+                    <option value="12">Switch 12</option>
+                    <option value="13">Switch 13</option>
+                    <option value="14">Switch 14</option>
+                    <option value="15">Switch 15</option>
+                    <option value="16">Switch 16</option>
+                    <option value="17">Switch 17</option>
+                    <option value="18">Switch 18</option>
+                    <option value="19">Switch 19</option>
+                    <option value="20">Switch 20</option>
+                </select>
+            </div>
+            <!-- Step 2: Switch Naming -->
+            <div class="form-group">
+                <label for="switch-name">Step 2: Name the Switch</label>
+                <input type="text" id="switch-name" placeholder="Enter switch name">
+            </div>
+            <!-- Step 3: Icon Selection -->
+            <div class="form-group">
+                <label for="icon-dropdown">Step 3: Choose an Icon</label>
+                <div class="icon-dropdown-container" style="display: flex; align-items: center;">
+                    <img id="icon-preview" src="/images/Button_Default_Image.jpg" alt="Icon Preview" style="margin-right: 10px;">
+                    <select id="icon-dropdown">
+                        <option value="">-- Select an Icon --</option>
+                        <!-- Icons will be dynamically populated -->
+                    </select>
+                </div>
+            </div>
+            <!-- Step 4: Timer Configuration -->
+            <div class="form-group">
+                <label>Step 4: Set Times if Required (Press "Clear Timers" button to cancel)</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timer</th>
+                            <th>On Time</th>
+                            <th>Off Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Timer 1</td>
+                            <td><input type="time" id="timer1-on" /></td>
+                            <td><input type="time" id="timer1-off" /></td>
+                        </tr>
+                        <tr>
+                            <td>Timer 2</td>
+                            <td><input type="time" id="timer2-on" /></td>
+                            <td><input type="time" id="timer2-off" /></td>
+                        </tr>
+                        <tr>
+                            <td>Timer 3</td>
+                            <td><input type="time" id="timer3-on" /></td>
+                            <td><input type="time" id="timer3-off" /></td>
+                        </tr>
+                        <tr>
+                            <td>Timer 4</td>
+                            <td><input type="time" id="timer4-on" /></td>
+                            <td><input type="time" id="timer4-off" /></td>
+                        </tr>
+                        <tr>
+                            <td>Timer 5</td>
+                            <td><input type="time" id="timer5-on" /></td>
+                            <td><input type="time" id="timer5-off" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="clear-timers" class="btn-save">Clear Timers</button>
+            </div>
+            <!-- Step 5: Username and Password -->
+            <div class="form-group">
+                <label>Step 5: Enter Username and Password</label>
+                <input type="text" id="username" placeholder="Username">
+                <div style="position: relative;">
+                    <input type="password" id="password" placeholder="Password" style="padding-right: 30px;">
+                    <i id="toggle-password" class="fa fa-eye" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                </div>
+            </div>
+            <!-- Save Button -->
+            <button id="save-sta-settings">Save Settings</button>
+        </div>
+        <!-- System Time Display -->
+        <div id="system-time-container" class="form-group">
+            <p id="time-display">Fetching system time...</p>
+        </div>
+    </div>
+    <script src="settings.js" defer></script>
+</body>
+</html>

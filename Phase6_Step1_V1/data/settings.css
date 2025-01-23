@@ -1,0 +1,392 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Soft blue background for a calming effect */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50; /* Darker blue-gray for the title */
+    font-size: 2rem;
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e3e6e8; /* Subtle border for distinction */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+/* Wi-Fi Section */
+/* Adjusting Form Row Layout */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between inputs */
+    gap: 15px; /* Add consistent spacing between elements */
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+/* Adjust Individual Form Groups */
+.form-group {
+    flex: 1;
+    margin-bottom: 10px;
+    min-width: 120px; /* Minimum width for smaller screens */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem; /* Slightly smaller font for labels */
+}
+
+/* Inputs and Dropdown */
+input[type="text"],
+input[type="password"],
+select {
+    width: 95%; /* Reduce width to fit neatly */
+    max-width: 250px; /* Limit maximum width for larger screens */
+    padding: 6px 10px; /* Reduce padding for compactness */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* SSID Dropdown */
+#ssid {
+    width: 95%; /* Match other inputs */
+    max-width: 250px; /* Ensure consistency */
+}
+
+/* Password Input */
+#WiFi_password {
+    padding-right: 40px; /* Increase padding to give space for the icon */
+}
+
+#toggle-wifi-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form-group {
+    position: relative;
+}
+
+
+/* Alternative IP Address */
+#alternative-ip {
+    width: 95%; /* Match other inputs */
+    max-width: 250px;
+}
+
+/* Adjust Row for Mobile Devices */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Stack elements on smaller screens */
+        gap: 10px; /* Reduce spacing for compactness */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+        width: 100%; /* Full-width on smaller screens */
+    }
+}
+
+
+input:focus,
+select:focus {
+    border-color: #007bff; /* Highlighted border on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+    padding: 12px 18px;
+    background-color: #3498db; /* Modern blue for buttons */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Button shadow for depth */
+}
+
+button:hover {
+    background-color: #2980b9; /* Slightly darker blue */
+    transform: scale(1.02); /* Subtle scale effect on hover */
+}
+
+button[disabled] {
+    background-color: #bdc3c7; /* Gray for disabled state */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Specialized Buttons */
+#saveCredentialsButton {
+    background-color: #27ae60; /* Green for save */
+}
+
+#saveCredentialsButton:hover {
+    background-color: #219150;
+}
+
+#factory-reset {
+    background-color: #e74c3c; /* Red for reset */
+    float: right;
+    margin-left: 10px;
+}
+
+#factory-reset:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Icon Dropdown */
+.icon-dropdown-container {
+    display: flex;
+    align-items: center;
+}
+
+#icon-preview {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border: 1px solid #d1d9de;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+
+/* Timer Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Subtle border */
+}
+
+table th {
+    background-color: #2980b9; /* Vibrant blue for the header */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+}
+
+/* Table Row Background Colors */
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+/* Adjust Table Cell Layout */
+table td {
+    vertical-align: middle; /* Center content vertically */
+    text-align: center; /* Center content horizontally */
+    padding: 5px;
+    position: relative;
+}
+
+/* Time Input Styling */
+table input[type="time"] {
+    width: calc(100% - 30px); /* Adjust width to fit with padding and icon */
+    padding: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Includes padding in width calculation */
+    text-align: center;
+}
+
+/* Clock Icon Styling */
+table .clock-icon {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-left: 5px;
+    position: absolute; /* Position relative to the input */
+    right: 10px; /* Align to the right of the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+table .clock-icon:hover {
+    color: #1d6fa5; /* Darker blue on hover */
+}
+
+
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #ecf0f1; /* Light gray header background */
+    font-weight: bold;
+    color: #34495e;
+}
+
+table td {
+    background-color: #ffffff;
+}
+
+/* Clear Timers Button */
+#clear-timers {
+    background-color: #f39c12; /* Orange for clear */
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#clear-timers:hover {
+    background-color: #d35400; /* Darker orange */
+    transform: scale(1.02);
+}
+
+/* Username and Password */
+#username,
+#password {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+}
+
+/* System Time Display */
+#time-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #2980b9; /* Vibrant blue for system time */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    #icon-preview {
+        width: 35px;
+        height: 35px;
+    }
+}
+/* Timer Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Header Styling */
+table th {
+    background-color: #2980b9; /* Vibrant blue for the header */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+}
+
+/* Row Styling */
+table tr:nth-child(even) {
+    background-color: #f2f9fc; /* Light blue for alternating rows */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* White for alternating rows */
+}
+
+/* Hover Effect */
+table tr:hover {
+    background-color: #dfeef4; /* Slightly darker blue for hover */
+}
+
+/* On Time and Off Time Cells */
+table td {
+    border: 1px solid #ddd; /* Subtle border for separation */
+    color: #34495e; /* Neutral gray text for readability */
+}
+
+/* Input Fields in Table */
+table input[type="time"] {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Clock Icon */
+table .clock-icon {
+    color: #3498db; /* Vibrant blue for clock icons */
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+table .clock-icon:hover {
+    color: #1d6fa5; /* Darker blue on hover */
+}
